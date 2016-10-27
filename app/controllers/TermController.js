@@ -1,4 +1,4 @@
-import TermDAO = require('../services/TermDAO');
+const TermDAO = require('../services/TermDAO');
 
 class TermController {
   static get(req, res) {
