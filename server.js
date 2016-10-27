@@ -1,6 +1,6 @@
-// require('dotenv').config();
+require('dotenv').config();
 
-// process.env.ENV = process.env.ENV || 'dev';
+process.env.ENV = process.env.ENV || 'dev';
 
 const path = require('path');
 const express = require('express');
@@ -10,18 +10,18 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
 const app = require('./app/app');
 
-// if (process.env.ENV === 'dev') {
-//   const compiler = webpack(config);
-//   const middleware = webpackMiddleware(compiler, {
-//     stats: {
-//       colors: true,
-//       chunks: false,
-//     },
-//   });
+if (process.env.ENV === 'dev') {
+  const compiler = webpack(config);
+  const middleware = webpackMiddleware(compiler, {
+    stats: {
+      colors: true,
+      chunks: false,
+    },
+  });
 
-//   app.use(middleware);
-//   app.use(webpackHotMiddleware(compiler));
-// }
+  app.use(middleware);
+  app.use(webpackHotMiddleware(compiler));
+}
 
 app.use(express.static(path.join(__dirname, '/dist')));
 app.get('/', (request, response) => {

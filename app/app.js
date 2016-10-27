@@ -11,6 +11,6 @@ app.use(bodyParser.json());
 
 app.use(morgan('dev'));
 
-app.use('/api/terms', termRouter);
+app.use('/api/terms', TermRouter);
 
 module.exports = app;

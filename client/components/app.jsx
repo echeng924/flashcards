@@ -1,11 +1,19 @@
-console.log('linked');
 import React, { Component } from 'react';
+import request from 'superagent';
+import CardList from './cardList.jsx';
+import CardInput from './cardInput.jsx';
 
 class App extends Component {
+  constructor() {
+    super();
+  }
+
+
   render() {
     return (
       <div>
-        Flashcard
+        <CardInput />
+        <CardList />
       </div>
     );
   }
