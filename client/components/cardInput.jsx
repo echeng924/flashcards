@@ -22,6 +22,7 @@ class CardInput extends Component {
   }
 
   httpPostToDb() {
+    console.log(this.state);
     request.post('/api/terms')
            .send({
               term: this.state.term,

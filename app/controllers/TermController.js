@@ -21,8 +21,8 @@ class TermController {
       id: req.params.id,
       term: req.body.term,
       definition: req.body.definition,
-    }
-    TermDAO.update(updateData).then((term) => res.status(200).json(term))
+    };
+    TermDAO.update(updateData).then((term) => res.status(200).json(term));
   }
 
   static delete(req, res) {

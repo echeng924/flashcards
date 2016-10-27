@@ -1,5 +1,4 @@
 const express = require('express');
-
 const TermController = require('../controllers/TermController');
 
 const router = express.Router();

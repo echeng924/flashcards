@@ -1,5 +1,5 @@
 const db = require('../config/db');
-const sql = require('../config/sqlProvider');
+const sql = require('../config/sqlProvider').terms;
 const Term = require('../models/Term');
 
 class TermDAO {
